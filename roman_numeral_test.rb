@@ -28,6 +28,7 @@ def run_test_in_one_directory name
     493 => "CDXCIII",
     999 => "CMXCIX",
     1972 => "MCMLXXII",
+    1479 => "MCDLXXIX",
     2010 => "MMX"
   }
   
@@ -35,7 +36,8 @@ def run_test_in_one_directory name
   puts 'Running tests in ' + name
   roman_test_data.keys.each do |numeral|
     roman = roman_test_data[numeral]
-    stream = open "|" + "./numeral_to_roman " + numeral.to_s
+    command = "./numeral_to_roman " + numeral.to_s
+    stream = open "|" + command
     roman_result = stream.gets.chop
     stream.close
     puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s if( roman != roman_result )
@@ -45,7 +47,7 @@ end
 
 cwd = Dir.new '.'
 cwd.each do |name|
-  is_sub = (name != '.' and name != '..' and File.directory?(name))
+  is_sub = (name[0,1] != '.' and name != '..' and File.directory?(name))
   if is_sub
     Dir.chdir name
     run_test_in_one_directory name
