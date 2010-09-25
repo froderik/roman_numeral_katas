@@ -34,15 +34,19 @@ def run_test_in_one_directory name
   
   puts '===================================='
   puts 'Running tests in ' + name
+  failed_tests = 0
   roman_test_data.keys.each do |numeral|
     roman = roman_test_data[numeral]
     command = "./numeral_to_roman " + numeral.to_s
     stream = open "|" + command
     roman_result = stream.gets.chop
     stream.close
-    puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s if( roman != roman_result )
+    if roman != roman_result 
+      puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s 
+      failed_tests = failed_tests.next
+    end
   end
-  puts "Ran " + roman_test_data.size.to_s + " tests"
+  puts "Ran " + roman_test_data.size.to_s + " tests " + failed_tests.to_s + " tests failed"
 end
 
 cwd = Dir.new '.'
