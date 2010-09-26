@@ -39,22 +39,35 @@ def run_test_in_one_directory name
     roman = roman_test_data[numeral]
     command = "./numeral_to_roman " + numeral.to_s
     stream = open "|" + command
-    roman_result = stream.gets.chop
-    stream.close
-    if roman != roman_result 
-      puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s 
-      failed_tests = failed_tests.next
+    from_stream = stream.gets
+    if from_stream.nil?
+      puts name + " answers without words"
+    else
+      roman_result = from_stream.chop
+      stream.close
+      if roman != roman_result 
+        puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s 
+        failed_tests = failed_tests.next
+      end
     end
   end
   puts "Ran " + roman_test_data.size.to_s + " tests " + failed_tests.to_s + " tests failed"
 end
 
-cwd = Dir.new '.'
+def change_directory_and_run_tests name
+  Dir.chdir name
+  run_test_in_one_directory name
+  Dir.chdir '..'
+end
+
+if ARGV.size > 0
+  cwd = ARGV
+else
+  cwd = Dir.new '.'
+end
 cwd.each do |name|
   is_sub = (name[0,1] != '.' and name != '..' and File.directory?(name))
   if is_sub
-    Dir.chdir name
-    run_test_in_one_directory name
-    Dir.chdir '..'
+    change_directory_and_run_tests name
   end
 end
