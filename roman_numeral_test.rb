@@ -1,42 +1,50 @@
 #!/usr/bin/ruby
 
+@@roman_test_data = {
+  1 => 'I',
+  2 => 'II',
+  3 => 'III',
+  4 => 'IV',
+  5 => 'V',
+  6 => 'VI',
+  9 => 'IX',
+  10 => 'X',
+  12 => 'XII',
+  14 => 'XIV',
+  15 => "XV",
+  16 => "XVI",
+  19 => "XIX",
+  20 => "XX",
+  26 => "XXVI",
+  29 => "XXIX",
+  42 => "XLII",
+  49 => "XLIX",
+  77 => "LXXVII",
+  99 => "XCIX",
+  101 => "CI",
+  256 => "CCLVI",
+  493 => "CDXCIII",
+  999 => "CMXCIX",
+  1972 => "MCMLXXII",
+  1479 => "MCDLXXIX",
+  2010 => "MMX"
+}
+
+def before name
+  if File.exist? 'before'
+    before_stream = open "|before"
+    # do error handling here
+    before_stream.close
+  end
+end
 
 def run_test_in_one_directory name
-  roman_test_data = {
-    1 => 'I',
-    2 => 'II',
-    3 => 'III',
-    4 => 'IV',
-    5 => 'V',
-    6 => 'VI',
-    9 => 'IX',
-    10 => 'X',
-    12 => 'XII',
-    14 => 'XIV',
-    15 => "XV",
-    16 => "XVI",
-    19 => "XIX",
-    20 => "XX",
-    26 => "XXVI",
-    29 => "XXIX",
-    42 => "XLII",
-    49 => "XLIX",
-    77 => "LXXVII",
-    99 => "XCIX",
-    101 => "CI",
-    256 => "CCLVI",
-    493 => "CDXCIII",
-    999 => "CMXCIX",
-    1972 => "MCMLXXII",
-    1479 => "MCDLXXIX",
-    2010 => "MMX"
-  }
-  
   puts '===================================='
   puts 'Running tests in ' + name
+  before name
   failed_tests = 0
-  roman_test_data.keys.each do |numeral|
-    roman = roman_test_data[numeral]
+  @@roman_test_data.keys.each do |numeral|
+    roman = @@roman_test_data[numeral]
     command = "./numeral_to_roman " + numeral.to_s
     stream = open "|" + command
     from_stream = stream.gets
@@ -51,7 +59,7 @@ def run_test_in_one_directory name
       end
     end
   end
-  puts "Ran " + roman_test_data.size.to_s + " tests " + failed_tests.to_s + " tests failed"
+  puts "Ran " + @@roman_test_data.size.to_s + " tests " + failed_tests.to_s + " tests failed"
 end
 
 def change_directory_and_run_tests name
