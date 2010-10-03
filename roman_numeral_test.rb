@@ -30,18 +30,22 @@
   2010 => "MMX"
 }
 
-def before name
+def before
   if File.exist? 'before'
-    before_stream = open "|before"
-    # do error handling here
-    before_stream.close
+    stream = open "|./before"
+    has_error = false
+    stream.each_line do |one_line|
+      has_error = true
+      puts one_line
+    end
+    stream.close
   end
 end
 
 def run_test_in_one_directory name
   puts '===================================='
   puts 'Running tests in ' + name
-  before name
+  before
   failed_tests = 0
   @@roman_test_data.keys.each do |numeral|
     roman = @@roman_test_data[numeral]

@@ -1,5 +1,2 @@
 #!/bin/bash
-
-rm *.class
-javac RomanNumber.java NumeralToRomanMain.java
 java -cp . NumeralToRomanMain $1
