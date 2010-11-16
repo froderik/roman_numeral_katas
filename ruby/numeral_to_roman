@@ -17,12 +17,12 @@ end
 
 def singular_number number, sign_for_ones, sign_for_fives, sign_for_tens
   case number
-  when 0:     ''
-  when 1..3: times number, sign_for_ones
-  when 4:     sign_for_ones + sign_for_fives
-  when 5:     sign_for_fives
-  when 6..8: sign_for_fives + times( number - 5, sign_for_ones )
-  when 9:     sign_for_ones + sign_for_tens
+  when 0      then     '' 
+  when 1..3   then     times number, sign_for_ones 
+  when 4      then     sign_for_ones + sign_for_fives 
+  when 5      then     sign_for_fives 
+  when 6..8   then     sign_for_fives + times( number - 5, sign_for_ones )
+  when 9      then     sign_for_ones + sign_for_tens
   end
 end
 
