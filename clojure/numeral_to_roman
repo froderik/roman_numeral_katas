@@ -1,0 +1,2 @@
+#!/bin/bash
+java -cp clojure.jar clojure.main -i numeral_to_roman.clj -e "(numeral_to_roman $1)"
