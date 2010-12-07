@@ -25,8 +25,8 @@
     [number]
     (str
         (times (/ number 1000) "M")
-        (singular_number "C" "D" "M" (rem (/ number 100) 10))
-        (singular_number "X" "L" "C" (rem (/  number 10) 10))
+        (singular_number "C" "D" "M" (rem (quot number 100) 10))
+        (singular_number "X" "L" "C" (rem (quot  number 10) 10))
         (singular_number "I" "V" "X" (rem number 10))
     )
 )
