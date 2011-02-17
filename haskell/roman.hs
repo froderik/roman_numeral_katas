@@ -7,7 +7,6 @@ import System.Console.GetOpt
 main = do 
      args <- getArgs
      let number = rInt (head args)
---     let number = 12
      putStr ((times (number `quot` 1000) "M") ++ 
             (timesSmaller ((number `quot` 100) `mod` 10) "C" "D" "M") ++
             (timesSmaller ((number `quot` 10) `mod` 10) "X" "L" "C") ++
