@@ -7,10 +7,11 @@ import System.Console.GetOpt
 main = do 
      args <- getArgs
      let number = rInt (head args)
-     putStr ((times (number `div` 1000) "M") ++ 
-            (timesSmaller ((number `div` 100) `mod` 10) "C" "D" "M") ++
-            (timesSmaller ((number `div` 10) `mod` 10) "X" "L" "C") ++
-            (timesSmaller (number `mod` 10) "X" "V" "X") ++ "\n")
+--     let number = 12
+     putStr ((times (number `quot` 1000) "M") ++ 
+            (timesSmaller ((number `quot` 100) `mod` 10) "C" "D" "M") ++
+            (timesSmaller ((number `quot` 10) `mod` 10) "X" "L" "C") ++
+            (timesSmaller (number `mod` 10) "I" "V" "X") ++ "\n")
 
 times 0 _ = ""
 times n s = take n (cycle s)

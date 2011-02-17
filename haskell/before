@@ -1,0 +1,5 @@
+#!/bin/bash
+rm *.hi
+rm *.o
+rm *.exe
+ghc -o RomanNumerals.exe roman.hs
