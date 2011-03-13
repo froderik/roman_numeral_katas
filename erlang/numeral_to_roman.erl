@@ -1,13 +1,20 @@
 -module(numeral_to_roman).
--export([convert/1]).
+-export([main/1]).
+-import(io, [format/1]).
 
-convert( Number ) -> 
+main( Args ) ->
+  [Number_string|_] = Args, 
+  Number = list_to_integer(Number_string),
+  Result = convert( Number ),
+  io:format(Result ++ "\n").
+
+convert( Number ) ->
   times( "M", Number div 1000) ++ 
   one_number( "C", "D", "M", Number div 100 rem 10) ++
   one_number( "X", "L", "C", Number div 10 rem 10) ++
   one_number( "I", "V", "X", Number rem 10).
 
-times( Symbol, 0 ) -> "";
+times( _, 0 ) -> "";
 times( Symbol, Count ) -> 
   times( Symbol, Count - 1 ) ++ Symbol.
 

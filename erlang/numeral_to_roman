@@ -1,0 +1,2 @@
+#!/bin/bash
+erl -run numeral_to_roman main $1 -run init stop -noshell
