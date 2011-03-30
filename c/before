@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f RomanNumerals.exe
+gcc -Wall -O3 -o RomanNumerals.exe roman.c
