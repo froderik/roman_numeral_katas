@@ -4,3 +4,10 @@
 *.6
 *.beam
 erl_crash.dump
+scala/project/boot/
+target/
+lib_managed/
+src_managed/
+scala/project/plugins/project/
+.idea/
+*.iml

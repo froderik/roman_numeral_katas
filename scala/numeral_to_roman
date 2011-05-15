@@ -1,0 +1,2 @@
+#!/bin/bash
+java -cp project/boot/scala-2.9.0/lib/scala-library.jar:target/scala_2.9.0/roman-numeral-kata_2.9.0-1.0.jar Roman $1
