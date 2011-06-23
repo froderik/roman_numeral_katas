@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# hmmm - maybe do this with sed instead..... :-)
 function singular_number 
 {
   if [ "$1" == 0 ]; then
