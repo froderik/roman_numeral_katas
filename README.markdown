@@ -25,3 +25,6 @@ This repo is a collection of implementations of the roman numeral kata in differ
 
 ## ruby 
 * 1.9.2 instaled with rvm - should probably run with 1.8 as well
+
+## scala
+* java 1.6, Scala 2.9.0 and SBT 0.7.7
