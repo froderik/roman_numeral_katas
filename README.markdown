@@ -23,6 +23,9 @@ This repo is a collection of implementations of the roman numeral kata in differ
 ## java
 * java 1.6.0.17 that comes with MacOSX 10.6.5. Any Java version will probably work fine.
 
+## javascript
+* `sudo brew install node`
+
 ## ruby 
 * 1.9.2 instaled with rvm - should probably run with 1.8 as well
 

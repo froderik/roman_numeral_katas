@@ -1,0 +1,2 @@
+#!/bin/bash
+node numeral_to_roman.js $1
