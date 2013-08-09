@@ -1,3 +1,4 @@
 #!/bin/bash
-rustc roman.rs
+rustc -o roman.exe roman.rs
+#rust test roman.rs
 

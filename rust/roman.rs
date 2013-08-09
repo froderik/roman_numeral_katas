@@ -15,8 +15,12 @@ fn main() {
 }
 
 fn convert(num: int) {
-    println(fmt!("You entered: '%d'", num));
-    times(num / 1000, ~"M");
+    let mut romanNum = times(num / 1000, ~"M");
+    romanNum = romanNum + timesMany(num / 100 % 10, ~"C", ~"D", ~"M");
+    romanNum = romanNum + timesMany(num / 10 % 10, ~"X", ~"L", ~"C");
+    romanNum = romanNum + timesMany(num % 10, ~"I", ~"V", ~"X");
+    
+    println(romanNum)
 }
 
 fn times(num: int, ch: ~str) -> ~str {
@@ -27,6 +31,16 @@ fn times(num: int, ch: ~str) -> ~str {
         s.push_str(ch);
     }
     s
+}
+
+fn timesMany(num: int, ones: ~str, fives: ~str, tens: ~str) -> ~str {
+    match(num) {
+        1..3 => times(num,ones),
+        4 => ones + fives,
+        5..8 => fives + times(num -5,ones),
+        9 => ones + tens,
+        _ => ~"",
+    }
 }
 
 #[test]
