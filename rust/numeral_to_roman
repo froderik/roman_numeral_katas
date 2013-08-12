@@ -1,0 +1,2 @@
+#!/bin/bash
+./roman.exe $1

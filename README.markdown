@@ -31,3 +31,6 @@ This repo is a collection of implementations of the roman numeral kata in differ
 
 ## scala
 * java 1.6, Scala 2.9.0 and SBT 0.7.7
+
+## rust
+* rust 0.7, older or newer may or may not work
