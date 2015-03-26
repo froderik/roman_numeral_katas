@@ -52,16 +52,16 @@ def run_test_in_one_directory name
     command = "./numeral_to_roman " + numeral.to_s
     stream = open "|" + command
     from_stream = stream.gets
-    if from_stream.nil?
+    unless from_stream
       puts name + " answers without words"
     else
       roman_result = from_stream.chop
-      stream.close
       if roman != roman_result 
         puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s 
         failed_tests = failed_tests.next
       end
     end
+    stream.close
   end
   puts "Ran " + ROMAN_TEST_DATA.size.to_s + " tests " + failed_tests.to_s + " tests failed"
 end
