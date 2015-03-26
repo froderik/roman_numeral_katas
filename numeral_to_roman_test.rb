@@ -36,34 +36,34 @@ def before
     has_error = false
     stream.each_line do |one_line|
       has_error = true
-      puts one_line
+      p one_line
     end
     stream.close
   end
 end
 
 def run_test_in_one_directory name
-  puts '===================================='
-  puts 'Running tests in ' + name
+  p '===================================='
+  p 'Running tests in ' + name
   before
   failed_tests = 0
   ROMAN_TEST_DATA.keys.each do |numeral|
     roman = ROMAN_TEST_DATA[numeral]
-    command = "./numeral_to_roman " + numeral.to_s
+    command = "./numeral_to_roman #{numeral}"
     stream = open "|" + command
     from_stream = stream.gets
     unless from_stream
-      puts name + " answers without words"
+      p "#{name} answers without words"
     else
       roman_result = from_stream.chop
       if roman != roman_result 
-        puts numeral.to_s + " should be " + roman.to_s + " but is " + roman_result.to_s 
+        p "#{numeral} should be #{roman} but is #{roman_result}" 
         failed_tests = failed_tests.next
       end
     end
     stream.close
   end
-  puts "Ran " + ROMAN_TEST_DATA.size.to_s + " tests " + failed_tests.to_s + " tests failed"
+  p "Ran #{ROMAN_TEST_DATA.size} tests #{failed_tests} tests failed"
 end
 
 def change_directory_and_run_tests name
