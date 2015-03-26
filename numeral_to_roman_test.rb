@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-@@roman_test_data = {
+ROMAN_TEST_DATA = {
   1 => 'I',
   2 => 'II',
   3 => 'III',
@@ -47,8 +47,8 @@ def run_test_in_one_directory name
   puts 'Running tests in ' + name
   before
   failed_tests = 0
-  @@roman_test_data.keys.each do |numeral|
-    roman = @@roman_test_data[numeral]
+  ROMAN_TEST_DATA.keys.each do |numeral|
+    roman = ROMAN_TEST_DATA[numeral]
     command = "./numeral_to_roman " + numeral.to_s
     stream = open "|" + command
     from_stream = stream.gets
@@ -63,7 +63,7 @@ def run_test_in_one_directory name
       end
     end
   end
-  puts "Ran " + @@roman_test_data.size.to_s + " tests " + failed_tests.to_s + " tests failed"
+  puts "Ran " + ROMAN_TEST_DATA.size.to_s + " tests " + failed_tests.to_s + " tests failed"
 end
 
 def change_directory_and_run_tests name
