@@ -26,6 +26,9 @@ This repo is a collection of implementations of the roman numeral kata in differ
 ## javascript
 * `sudo brew install node`
 
+## nim
+* nim is needed on the command line.
+
 ## ruby 
 * 1.9.2 instaled with rvm - should probably run with 1.8 as well
 

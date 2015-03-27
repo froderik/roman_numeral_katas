@@ -12,3 +12,5 @@ src_managed/
 scala/project/plugins/project/
 .idea/
 *.iml
+nim/roman_numerals
+nim/nimcache

@@ -1,0 +1,2 @@
+#!/bin/bash
+nim c roman_numerals.nim

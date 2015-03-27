@@ -45,8 +45,10 @@ end
 def run_test_in_one_directory name
   p '===================================='
   p 'Running tests in ' + name
+
   before
   failed_tests = 0
+
   ROMAN_TEST_DATA.keys.each do |numeral|
     roman = ROMAN_TEST_DATA[numeral]
     command = "./numeral_to_roman #{numeral}"
@@ -63,6 +65,7 @@ def run_test_in_one_directory name
     end
     stream.close
   end
+
   p "Ran #{ROMAN_TEST_DATA.size} tests #{failed_tests} tests failed"
 end
 
