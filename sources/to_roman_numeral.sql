@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION to_roman_numeral( pv_decimal_number INTEGER ) RETURN VARCHAR2 IS
+BEGIN
+  RETURN 'I';
+END;
+/
+
