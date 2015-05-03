@@ -10,6 +10,7 @@ BEGIN
       WHEN 6 THEN 'VI'
       WHEN 7 THEN 'VII'
       WHEN 8 THEN 'VIII'
+      WHEN 9 THEN 'IX'
     END;
 END;
 /
