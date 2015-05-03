@@ -9,7 +9,26 @@ describe 'Decimal to roman numeral converter' do
                      LXXXI LXXXII LXXXIII LXXXIV LXXXV LXXXVI LXXXVII LXXXVIII LXXXIX XC XCI XCII XCIII XCIV XCV XCVI XCVII XCVIII XCIX C
                     }
   (1..roman_numbers.size).each do |given|
+
     expected = roman_numbers[given-1]
+
+    it "should return #{expected} for #{given}" do
+      expect( plsql.to_roman_numeral(given) ).to eq( expected )
+    end
+
+  end
+
+  [
+    [200	,'CC'],
+    [300	,'CCC'],
+    [400	,'CD'],
+    [500	,'D'],
+    [600	,'DC'],
+    [700	,'DCC'],
+    [800	,'DCCC'],
+    [900	,'CM'],
+  ].each do |given, expected|
+
     it "should return #{expected} for #{given}" do
       expect( plsql.to_roman_numeral(given) ).to eq( expected )
     end
