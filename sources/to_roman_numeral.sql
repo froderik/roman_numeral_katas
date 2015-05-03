@@ -11,6 +11,7 @@ BEGIN
       WHEN 7 THEN 'VII'
       WHEN 8 THEN 'VIII'
       WHEN 9 THEN 'IX'
+      WHEN 10 THEN 'X'
     END;
 END;
 /
