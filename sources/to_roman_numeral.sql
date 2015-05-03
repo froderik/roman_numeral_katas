@@ -32,6 +32,7 @@ CREATE OR REPLACE FUNCTION to_roman_numeral( pv_decimal_number INTEGER ) RETURN 
 BEGIN
   lv_decimal_roman_map
     := la_decimal_roman_map(
+      decimal_to_roman(100,'C'),
       decimal_to_roman(90,'XC'), decimal_to_roman(50,'L'), decimal_to_roman(40,'XL'), decimal_to_roman(10,'X'),
       decimal_to_roman(9,'IX'), decimal_to_roman(5,'V'), decimal_to_roman(4,'IV'), decimal_to_roman(1,'I')
       );
