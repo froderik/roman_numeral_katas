@@ -4,6 +4,7 @@ BEGIN
     CASE pv_decimal_number
       WHEN 1 THEN 'I'
       WHEN 2 THEN 'II'
+      WHEN 3 THEN 'III'
     END;
 END;
 /
