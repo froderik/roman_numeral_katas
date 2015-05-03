@@ -2,6 +2,10 @@ CREATE OR REPLACE FUNCTION to_roman_numeral( pv_decimal_number INTEGER ) RETURN 
   lv_decimal_number INTEGER := pv_decimal_number;
   lv_roman_numeral  VARCHAR2(100);
 BEGIN
+  IF lv_decimal_number >= 90 THEN
+    lv_roman_numeral := lv_roman_numeral || 'XC';
+    lv_decimal_number := lv_decimal_number - 90;
+  END IF;
   IF lv_decimal_number >= 50 THEN
     lv_roman_numeral := lv_roman_numeral || 'L';
     lv_decimal_number := lv_decimal_number - 50;
@@ -16,6 +20,7 @@ BEGIN
   END IF;
   IF lv_decimal_number = 9 THEN
     lv_roman_numeral := lv_roman_numeral || 'IX';
+    lv_decimal_number := lv_decimal_number - 9;
   END IF;
   IF lv_decimal_number BETWEEN 5 AND 8 THEN
     lv_roman_numeral := lv_roman_numeral || 'V';
