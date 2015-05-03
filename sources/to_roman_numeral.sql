@@ -2,7 +2,7 @@ CREATE OR REPLACE FUNCTION to_roman_numeral( pv_decimal_number INTEGER ) RETURN 
   lv_decimal_number INTEGER := pv_decimal_number;
   lv_roman_numeral  VARCHAR2(100);
 BEGIN
-  IF lv_decimal_number = 40 THEN
+  IF lv_decimal_number >= 40 THEN
     lv_roman_numeral := lv_roman_numeral || 'XL';
     lv_decimal_number := lv_decimal_number - 40;
   END IF;
