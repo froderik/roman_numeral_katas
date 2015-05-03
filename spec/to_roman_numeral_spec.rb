@@ -2,19 +2,9 @@ require_relative 'spec_helper'
 
 describe 'Decimal to roman numeral converter' do
 
-  [
-      [ 1,    'I'],
-      [ 2,   'II'],
-      [ 3,  'III'],
-      [ 4,   'IV'],
-      [ 5,    'V'],
-      [ 6,   'VI'],
-      [ 7,  'VII'],
-      [ 8, 'VIII'],
-      [ 9,   'IX'],
-      [10,    'X'],
-      [11,   'XI'],
-  ].each do |given, expected|
+  roman_numbers = %w{0 I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI XVII XVIII}
+  (1..18).each do |given|
+    expected = roman_numbers[given]
     it "should return #{expected} for #{given}" do
       expect( plsql.to_roman_numeral(given) ).to eq( expected )
     end
