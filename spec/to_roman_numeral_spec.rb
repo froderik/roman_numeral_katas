@@ -11,6 +11,7 @@ describe 'Decimal to roman numeral converter' do
       [ 6,   'VI'],
       [ 7,  'VII'],
       [ 8, 'VIII'],
+      [ 9,   'IX'],
   ].each do |given, expected|
     it "should return #{expected} for #{given}" do
       expect( plsql.to_roman_numeral(given) ).to eq( expected )
