@@ -1,16 +1,12 @@
 CREATE OR REPLACE TYPE decimal_to_roman IS OBJECT (
   divisor INTEGER,
   symbol VARCHAR2(2),
-  MEMBER FUNCTION get_roman_numeral_piece(
-    pv_number IN OUT NOCOPY INTEGER
-  ) RETURN VARCHAR2
+  MEMBER FUNCTION get_roman_numeral_piece( pv_number IN OUT NOCOPY INTEGER ) RETURN VARCHAR2
 );
 /
 
 CREATE OR REPLACE TYPE BODY decimal_to_roman IS
-  MEMBER FUNCTION get_roman_numeral_piece(
-    pv_number IN OUT NOCOPY INTEGER
-  ) RETURN VARCHAR2 IS
+  MEMBER FUNCTION get_roman_numeral_piece( pv_number IN OUT NOCOPY INTEGER ) RETURN VARCHAR2 IS
     lv_result VARCHAR2(100);
   BEGIN
     IF pv_number >= divisor THEN
