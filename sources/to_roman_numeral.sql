@@ -5,6 +5,7 @@ BEGIN
       WHEN 1 THEN 'I'
       WHEN 2 THEN 'II'
       WHEN 3 THEN 'III'
+      WHEN 4 THEN 'IV'
     END;
 END;
 /
