@@ -27,6 +27,7 @@ describe 'Decimal to roman numeral converter' do
     [700	,'DCC'],
     [800	,'DCCC'],
     [900	,'CM'],
+    [2015, 'MMXV'],
   ].each do |given, expected|
 
     it "should return #{expected} for #{given}" do
