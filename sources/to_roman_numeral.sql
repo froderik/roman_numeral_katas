@@ -31,6 +31,9 @@ CREATE OR REPLACE FUNCTION to_roman_numeral( pv_decimal_number INTEGER ) RETURN 
   lv_decimal_roman_map la_decimal_roman_map;
 
 BEGIN
+  IF lv_decimal_number > 3000 THEN
+    raise_application_error(-20000, 'Function works only up to 3000 decimal number');
+  END IF;
   lv_decimal_roman_map
     := la_decimal_roman_map(
       decimal_to_roman(1000,'M'),
