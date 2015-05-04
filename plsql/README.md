@@ -15,3 +15,5 @@ To visualize the flow of TDD the commit frequency is to be as follows:
 
 That was my second PLSQL programming kata.
 First one was with FizzBuzz (thanks to Krzysztof Jelski from Pragmatists)
+
+I've made a blog post about the kata, so if you're looking for any references please have a look [here](http://www.oraclethoughts.com/testing/test-drive-your-oracle-database-yes-its-doable-and-its-fun/)
