@@ -13,5 +13,5 @@ To visualize the flow of TDD the commit frequency is to be as follows:
 
 4. Continue with next case
 
-
-
+That was my second PLSQL programming kata.
+First one was with FizzBuzz (thanks to Krzysztof Jelski from Pragmatists)
