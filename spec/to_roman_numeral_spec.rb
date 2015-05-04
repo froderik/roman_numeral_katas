@@ -36,5 +36,10 @@ describe 'Decimal to roman numeral converter' do
 
   end
 
+  it 'should raise exception for 3001' do
+    expect{ plsql.to_roman_numeral(3001) }.to raise_exception(/works only up to 3000/)
+
+  end
+
 
 end
