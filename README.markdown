@@ -29,6 +29,9 @@ This repo is a collection of implementations of the roman numeral kata in differ
 ## nim
 * nim is needed on the command line.
 
+## plsql
+* check the readme in the subfolder - this piece does not integrate with the root folder test
+
 ## ruby 
 * 1.9.2 instaled with rvm - should probably run with 1.8 as well
 
