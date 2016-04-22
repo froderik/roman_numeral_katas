@@ -1,5 +1,3 @@
 #!/bin/bash
-rm *.6
-6g roman.go 
-6l -o RomanNumerals.exe roman.6
-
+go build .
+mv go RomanNumerals.exe
